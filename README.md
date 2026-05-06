@@ -2,7 +2,24 @@
 
 > An AI-powered CRM for pharmaceutical field representatives to log and manage interactions with Healthcare Professionals (HCPs). Features a **dual-mode Log Interaction screen** (Structured Form + AI Chat) powered by a **LangGraph agent** using Groq's `gemma2-9b-it` model.
 
-🔗 **Live Demo:** [frontend on Vercel] | [API on Render]
+---
+
+## UI Interface
+
+### Dashboard
+![Dashboard](assets/dashboard.png)
+
+### Log Interaction — Structured Form
+![Structured Form](assets/form.png)
+
+### Log Interaction — AI Chat
+![AI Chat](assets/chat.png)
+
+### Interaction History
+![Interaction History](assets/history.png)
+
+### AI Tools Demo
+![AI Tools Demo](assets/demo.png)
 
 ---
 
@@ -213,3 +230,9 @@ VITE_API_URL=http://localhost:8000          # local dev
 | AI Agent | LangGraph 0.4 (ReAct) |
 | LLM | Groq — gemma2-9b-it + llama-3.3-70b-versatile |
 | Deploy | Vercel (frontend) + Render (backend) |
+
+---
+
+## 📜 License
+
+MIT License - See LICENSE file for details
