@@ -1,6 +1,6 @@
 # 💊 PharmaSync — AI-First CRM HCP Module
 
-> An AI-powered CRM for pharmaceutical field representatives to log and manage interactions with Healthcare Professionals (HCPs). Features a **dual-mode Log Interaction screen** (Structured Form + AI Chat) powered by a **LangGraph agent** using Groq's `gemma2-9b-it` model.
+> An AI-powered CRM for pharmaceutical field representatives to log and manage interactions with Healthcare Professionals (HCPs). Features a **dual-mode Log Interaction screen** (Structured Form + AI Chat) powered by a **LangGraph agent** using Groq's `llama-3.1-8b-instant` model.
 
 ---
 
@@ -31,7 +31,7 @@
 │   Redux Toolkit         │◄──────►│   SQLite + SQLAlchemy         │
 │   React Router v6       │        │   LangGraph 0.4 (ReAct)       │
 │   Lucide React Icons    │        │   Groq API                    │
-│   Vanilla CSS           │        │     ├─ gemma2-9b-it (primary) │
+│   Vanilla CSS           │        │     ├─ llama-3.1-8b (primary) │
 │                         │        │     └─ llama-3.3-70b (context)│
 │  Pages:                 │        │                               │
 │  • Dashboard            │        │  5 LangGraph Tools:           │
@@ -51,9 +51,9 @@
 
 | # | Tool | Model | Description |
 |---|------|-------|-------------|
-| 1 | `log_interaction` | gemma2-9b-it | Captures interaction data, generates AI summary, detects sentiment, recommends next action. Persists to SQLite. |
-| 2 | `edit_interaction` | gemma2-9b-it | Edits interaction by ID. LLM re-generates summary if notes are changed. |
-| 3 | `get_hcp_profile` | gemma2-9b-it | Full HCP profile with history, engagement score, last visit, and AI engagement narrative. |
+| 1 | `log_interaction` | llama-3.1-8b-instant | Captures interaction data, generates AI summary, detects sentiment, recommends next action. Persists to SQLite. |
+| 2 | `edit_interaction` | llama-3.1-8b-instant | Edits interaction by ID. LLM re-generates summary if notes are changed. |
+| 3 | `get_hcp_profile` | llama-3.1-8b-instant | Full HCP profile with history, engagement score, last visit, and AI engagement narrative. |
 | 4 | `suggest_next_action` | llama-3.3-70b-versatile | Analyzes interaction history and returns 3 tactical next-step sales recommendations. |
 | 5 | `analyze_interaction_history` | llama-3.3-70b-versatile | Territory-wide trend analysis: sentiment breakdown, visit frequency, engagement gaps, performance report. |
 
@@ -228,7 +228,7 @@ VITE_API_URL=http://localhost:8000          # local dev
 | Backend | FastAPI (Python) |
 | Database | SQLite + SQLAlchemy |
 | AI Agent | LangGraph 0.4 (ReAct) |
-| LLM | Groq — gemma2-9b-it + llama-3.3-70b-versatile |
+| LLM | Groq — llama-3.1-8b-instant + llama-3.3-70b-versatile |
 | Deploy | Vercel (frontend) + Render (backend) |
 
 ---
