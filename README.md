@@ -4,7 +4,7 @@
 
 ---
 
-## UI Interface
+## User Interface
 
 ### Dashboard
 ![Dashboard](assets/dashboard.png)
