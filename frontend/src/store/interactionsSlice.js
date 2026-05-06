@@ -44,7 +44,11 @@ const interactionsSlice = createSlice({
       .addCase(addInteraction.fulfilled, (s, a) => { s.list.unshift(a.payload); })
       .addCase(editInteraction.fulfilled, (s, a) => {
         const idx = s.list.findIndex((i) => i.id === a.payload.id);
-        if (idx !== -1) s.list[idx] = a.payload;
+        if (idx !== -1) {
+          // Preserve the nested hcp object — the PUT endpoint returns a flat
+          // interaction without the joined hcp data, so we merge to keep it.
+          s.list[idx] = { ...s.list[idx], ...a.payload };
+        }
       })
       .addCase(removeInteraction.fulfilled, (s, a) => {
         s.list = s.list.filter((i) => i.id !== a.payload);

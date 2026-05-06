@@ -17,8 +17,10 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 
 # ── LLM with tool binding ────────────────────────────────────────────────────
+# Use llama-3.3-70b-versatile for the agent — it has strong tool-calling support.
+# llama-3.1-8b-instant is used only for fast direct LLM calls inside tools (summarization etc.)
 llm = ChatGroq(
-    model="llama-3.1-8b-instant",
+    model="llama-3.3-70b-versatile",
     api_key=os.getenv("GROQ_API_KEY"),
     temperature=0.2,
 )
@@ -71,7 +73,10 @@ crm_agent = graph_builder.compile()
 
 def run_agent(user_message: str) -> dict:
     """Run the CRM agent and return response + tool calls made."""
-    result = crm_agent.invoke({"messages": [HumanMessage(content=user_message)]})
+    result = crm_agent.invoke(
+        {"messages": [HumanMessage(content=user_message)]},
+        config={"recursion_limit": 10},  # prevent infinite loops
+    )
 
     messages = result["messages"]
 

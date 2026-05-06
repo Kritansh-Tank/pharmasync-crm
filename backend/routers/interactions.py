@@ -30,7 +30,7 @@ def get_interaction(interaction_id: int, db: Session = Depends(get_db)):
     return interaction
 
 
-@router.post("/", response_model=schemas.InteractionResponse, status_code=201)
+@router.post("/", response_model=schemas.InteractionWithHCP, status_code=201)
 def create_interaction(interaction: schemas.InteractionCreate, db: Session = Depends(get_db)):
     hcp = db.query(models.HCP).filter(models.HCP.id == interaction.hcp_id).first()
     if not hcp:
@@ -66,7 +66,7 @@ JSON:"""
     return db_interaction
 
 
-@router.put("/{interaction_id}", response_model=schemas.InteractionResponse)
+@router.put("/{interaction_id}", response_model=schemas.InteractionWithHCP)
 def update_interaction(
     interaction_id: int,
     update: schemas.InteractionUpdate,

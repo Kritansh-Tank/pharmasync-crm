@@ -12,12 +12,19 @@ async def chat(message: ChatMessage):
     Main conversational endpoint. Sends the user message to the LangGraph agent
     and returns the AI response along with any tool calls made.
     """
-    result = run_agent(message.message)
-    return ChatResponse(
-        response=result["response"],
-        tool_calls=result.get("tool_calls", []),
-        session_id=message.session_id or "default",
-    )
+    try:
+        result = run_agent(message.message)
+        return ChatResponse(
+            response=result["response"],
+            tool_calls=result.get("tool_calls", []),
+            session_id=message.session_id or "default",
+        )
+    except Exception as e:
+        return ChatResponse(
+            response=f"I encountered an error processing your request: {str(e)}. Please try rephrasing.",
+            tool_calls=[],
+            session_id=message.session_id or "default",
+        )
 
 
 @router.post("/tool", response_model=ToolResponse)
