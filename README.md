@@ -2,6 +2,10 @@
 
 > An AI-powered CRM for pharmaceutical field representatives to log and manage interactions with Healthcare Professionals (HCPs). Features a **dual-mode Log Interaction screen** (Structured Form + AI Chat) powered by a **LangGraph agent** using Groq's `llama-3.1-8b-instant` model.
 
+🔗 **Live Demo:** [pharmasync-crm.vercel.app](https://pharmasync-crm.vercel.app) &nbsp;|&nbsp; [API Docs](https://pharmasync-crm.onrender.com/docs)
+
+🎥 **Walkthrough Video:** [Watch on Loom](https://www.loom.com/share/f4619fb086444e50834603af61b83ed2)
+
 ---
 
 ## User Interface
