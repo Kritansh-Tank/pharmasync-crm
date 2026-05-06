@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-PRIMARY_MODEL = "gemma2-9b-it"
+PRIMARY_MODEL = "llama-3.1-8b-instant"
 CONTEXT_MODEL = "llama-3.3-70b-versatile"
 
 groq_client = Groq(api_key=GROQ_API_KEY)

@@ -18,7 +18,7 @@ load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 
 # ── LLM with tool binding ────────────────────────────────────────────────────
 llm = ChatGroq(
-    model="gemma2-9b-it",
+    model="llama-3.1-8b-instant",
     api_key=os.getenv("GROQ_API_KEY"),
     temperature=0.2,
 )

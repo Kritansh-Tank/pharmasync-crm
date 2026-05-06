@@ -101,7 +101,7 @@ export default function App() {
           }}>
             <span style={{ fontSize: 13, color: 'var(--text-muted)' }}>
               AI-First HCP CRM &nbsp;·&nbsp;
-              <span style={{ color: 'var(--accent)', fontWeight: 600 }}>gemma2-9b-it</span>
+              <span style={{ color: 'var(--accent)', fontWeight: 600 }}>llama-3.1-8b-instant</span>
               &nbsp;via Groq
             </span>
 

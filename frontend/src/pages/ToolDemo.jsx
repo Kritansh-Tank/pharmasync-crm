@@ -169,7 +169,7 @@ export default function ToolDemo() {
         <div className="page-title">AI Tools Demo</div>
         <div className="page-subtitle">
           Live demonstration of all 5 LangGraph tools · &nbsp;
-          <span style={{ color: '#6366f1', fontWeight: 600 }}>gemma2-9b-it</span>
+          <span style={{ color: '#6366f1', fontWeight: 600 }}>llama-3.1-8b-instant</span>
           &nbsp;&amp;&nbsp;
           <span style={{ color: '#8b5cf6', fontWeight: 600 }}>llama-3.3-70b-versatile</span>
           &nbsp;via Groq
